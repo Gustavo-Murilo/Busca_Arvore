@@ -4,9 +4,10 @@ TARGET = main.exe
 
 # Lista de arquivos a serem compilados
 SRCS = main.cpp \
-       implementation/tree.cpp \
-	   implementation/searchTree.cpp \
-	   implementation/doublyLinkedList.cpp
+       implementations/tree.cpp \
+       implementations/search_tree.cpp \
+       implementations/doubly_linked_list.cpp \
+       implementations/time_measure.cpp
 
 # Objetos a serem gerados a partir dos arquivos fonte
 OBJS = $(SRCS:.cpp=.o)

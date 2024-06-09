@@ -13,6 +13,5 @@ int measureExecutionTime(function<void()> func) {
     auto timeStop = high_resolution_clock::now();
     
     int timeDuration = duration_cast<microseconds>(timeStop - timeStart).count();
-
     return timeDuration;
 }
