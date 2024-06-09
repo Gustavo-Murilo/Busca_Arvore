@@ -8,7 +8,10 @@ struct DoublyLinkedList {
     Node* ptrTail;
 };
 
-// TODO: criar funções
 DoublyLinkedList* createList();
+void destroyList(DoublyLinkedList* ptrList);
+void insertBack(DoublyLinkedList* ptrList, int iPayload);
+int deleteFront(DoublyLinkedList* ptrList);
+bool isEmpty(DoublyLinkedList* ptrList);
 
 #endif // DOUBLY_LINKED_LIST_H
