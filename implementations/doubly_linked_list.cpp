@@ -18,3 +18,18 @@ void destroyList(DoublyLinkedList* ptrList) {
     }
     free(ptrList);
 }
+
+void insertBack(DoublyLinkedList* ptrList, int iPayload) {
+    Node* ptrNewNode = (Node*)malloc(sizeof(Node));
+    ptrNewNode->iPayload = iPayload;
+    ptrNewNode->ptrRight = nullptr;
+    ptrNewNode->ptrLeft = ptrList->ptrTail;
+    
+    if (ptrList->ptrTail != nullptr) {
+        ptrList->ptrTail->ptrRight = ptrNewNode;
+    } else {
+        ptrList->ptrHead = ptrNewNode;
+    }
+    
+    ptrList->ptrTail = ptrNewNode;
+}
