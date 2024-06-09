@@ -49,3 +49,7 @@ int deleteFront(DoublyLinkedList* ptrList) {
     free(ptrTemp);
     return iPayload;
 }
+
+bool isEmpty(DoublyLinkedList* ptrList) {
+    return ptrList->ptrHead == nullptr;
+}
