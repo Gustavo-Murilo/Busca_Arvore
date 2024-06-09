@@ -12,7 +12,7 @@ DoublyLinkedList* createList();
 DoublyLinkedList* createListByArray(int[], int);
 void destroyList(DoublyLinkedList*);
 void insertBack(DoublyLinkedList*, int);
-int deleteFront(DoublyLinkedList*);
+Node* deleteFront(DoublyLinkedList*);
 bool isEmpty(DoublyLinkedList*);
 void printList(DoublyLinkedList*);
 Node* searchList(DoublyLinkedList*, int);
