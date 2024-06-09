@@ -14,7 +14,7 @@ typedef struct Node
 } Node;
 
 Node* createNode(int);
-Node* createTreeByArray();
+Node* createTreeByArray(int[], int);
 Node* insertNode(Node*, int);
 void destroyTree(Node*);
 void deleteNode(Node*);

@@ -9,11 +9,11 @@ struct DoublyLinkedList {
 };
 
 DoublyLinkedList* createList();
-DoublyLinkedList* createListByArray(int iArr[], int iSize);
-void destroyList(DoublyLinkedList* ptrList);
-void insertBack(DoublyLinkedList* ptrList, int iPayload);
-int deleteFront(DoublyLinkedList* ptrList);
-bool isEmpty(DoublyLinkedList* ptrList);
-void printList(DoublyLinkedList* ptrList);
+DoublyLinkedList* createListByArray(int[], int);
+void destroyList(DoublyLinkedList*);
+void insertBack(DoublyLinkedList*, int);
+int deleteFront(DoublyLinkedList*);
+bool isEmpty(DoublyLinkedList*);
+void printList(DoublyLinkedList*);
 
 #endif // DOUBLY_LINKED_LIST_H
