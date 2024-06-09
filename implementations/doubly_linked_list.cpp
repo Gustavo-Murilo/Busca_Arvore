@@ -70,3 +70,14 @@ void printList(DoublyLinkedList* ptrList) {
     }
     cout << endl;
 }
+
+Node* searchList(DoublyLinkedList* ptrList, int iValue) {
+    Node* ptrCurrent = ptrList->ptrHead;
+    while (ptrCurrent != nullptr) {
+        if (ptrCurrent->iPayload == iValue) {
+            return ptrCurrent;
+        }
+        ptrCurrent = ptrCurrent->ptrRight;
+    }
+    return nullptr;
+}

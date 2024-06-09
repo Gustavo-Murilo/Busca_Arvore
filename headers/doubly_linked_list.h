@@ -15,5 +15,6 @@ void insertBack(DoublyLinkedList*, int);
 int deleteFront(DoublyLinkedList*);
 bool isEmpty(DoublyLinkedList*);
 void printList(DoublyLinkedList*);
+Node* searchList(DoublyLinkedList*, int);
 
 #endif // DOUBLY_LINKED_LIST_H
