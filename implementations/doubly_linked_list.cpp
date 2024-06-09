@@ -9,6 +9,14 @@ DoublyLinkedList* createList() {
     return ptrList;
 }
 
+DoublyLinkedList* createListByArray(int iArr[], int iSize) {
+    DoublyLinkedList* ptrList = createList();
+    for (int i = 0; i < iSize; i++) {
+        insertBack(ptrList, iArr[i]);
+    }
+    return ptrList;
+}
+
 void destroyList(DoublyLinkedList* ptrList) {
     Node* ptrCurrent = ptrList->ptrHead;
     while (ptrCurrent != nullptr) {
@@ -52,4 +60,13 @@ int deleteFront(DoublyLinkedList* ptrList) {
 
 bool isEmpty(DoublyLinkedList* ptrList) {
     return ptrList->ptrHead == nullptr;
+}
+
+void printList(DoublyLinkedList* ptrList) {
+    Node* ptrCurrent = ptrList->ptrHead;
+    while (ptrCurrent != nullptr) {
+        cout << ptrCurrent->iPayload << endl;
+        ptrCurrent = ptrCurrent->ptrRight;
+    }
+    cout << endl;
 }

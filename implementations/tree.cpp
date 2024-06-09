@@ -1,5 +1,4 @@
 #include "../headers/tree.h"
-#include <iostream>
 
 Node* createNode(int iValue)
 {
@@ -7,7 +6,7 @@ Node* createNode(int iValue)
     
     if (temp == nullptr)
     {
-        std::cerr << "Erro em createNode: malloc" << std::endl;
+        cerr << "Erro em createNode: malloc" << endl;
         exit(1);
     }
     
@@ -16,6 +15,18 @@ Node* createNode(int iValue)
     temp->ptrRight = nullptr;
     
     return temp;
+}
+
+Node* createTreeByArray(int iArr[], int iSize)
+{
+    Node* ptrRoot = nullptr;
+    
+    for (int i = 0; i < iSize; i++)
+    {
+        ptrRoot = insertNode(ptrRoot, iArr[i]);
+    }
+    
+    return ptrRoot;
 }
 
 Node* insertNode(Node* startingNode, int iData)
@@ -99,4 +110,13 @@ Node* higherLeaf(Node* startingNode)
     while (ptrCurrent && ptrCurrent->ptrRight != nullptr) ptrCurrent = ptrCurrent->ptrRight;
     
     return ptrCurrent;
+}
+
+void printTree(Node* startingNode)
+{
+    if (startingNode == nullptr) return;
+    
+    printTree(startingNode->ptrLeft);
+    cout << startingNode->iPayload << " ";
+    printTree(startingNode->ptrRight);
 }
