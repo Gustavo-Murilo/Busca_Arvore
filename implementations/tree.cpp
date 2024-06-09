@@ -11,8 +11,6 @@ Node* createNode(int iValue)
     }
     
     temp->iPayload = iValue;
-    temp->ptrLeft = nullptr;
-    temp->ptrRight = nullptr;
     
     return temp;
 }
