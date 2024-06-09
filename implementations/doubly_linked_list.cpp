@@ -33,3 +33,19 @@ void insertBack(DoublyLinkedList* ptrList, int iPayload) {
     
     ptrList->ptrTail = ptrNewNode;
 }
+
+int deleteFront(DoublyLinkedList* ptrList) {
+    if (isEmpty(ptrList)) return -1;  // Retorna -1 se a lista estiver vazia
+    Node* ptrTemp = ptrList->ptrHead;
+    ptrList->ptrHead = ptrList->ptrHead->ptrRight;
+    
+    if (ptrList->ptrHead != nullptr) {
+        ptrList->ptrHead->ptrLeft = nullptr;
+    } else {
+        ptrList->ptrTail = nullptr;
+    }
+    
+    int iPayload = ptrTemp->iPayload;
+    free(ptrTemp);
+    return iPayload;
+}
