@@ -1,4 +1,4 @@
-#include "../headers/search.h"
+#include "../headers/search_tree.h"
 #include "../headers/doubly_linked_list.h"
 
 // TODO: implementar funções

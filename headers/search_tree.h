@@ -1,5 +1,5 @@
-#ifndef SEARCH_H
-#define SEARCH_H
+#ifndef SEARCH_TREE_H
+#define SEARCH_TREE_H
 
 #include "tree.h"
 
