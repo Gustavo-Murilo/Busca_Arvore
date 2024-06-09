@@ -9,5 +9,6 @@ struct DoublyLinkedList {
 };
 
 // TODO: criar funções
+DoublyLinkedList* createList();
 
 #endif // DOUBLY_LINKED_LIST_H
