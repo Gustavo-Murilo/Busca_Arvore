@@ -8,3 +8,13 @@ DoublyLinkedList* createList() {
     ptrList->ptrTail = nullptr;
     return ptrList;
 }
+
+void destroyList(DoublyLinkedList* ptrList) {
+    Node* ptrCurrent = ptrList->ptrHead;
+    while (ptrCurrent != nullptr) {
+        Node* ptrRight = ptrCurrent->ptrRight;
+        free(ptrCurrent);
+        ptrCurrent = ptrRight;
+    }
+    free(ptrList);
+}
