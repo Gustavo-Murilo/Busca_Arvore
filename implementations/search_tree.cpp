@@ -11,15 +11,14 @@ Node* searchDFS(Node* startingNode, int iValue)
     else return searchDFS(startingNode->ptrRight, iValue);
 }
 
-Node* searchBFS(Node* startingNode, int iValue)
-{
-        if (startingNode == nullptr) return nullptr;
+Node* searchBFS(Node* startingNode, int iValue) {
+    if (startingNode == nullptr) return nullptr;
 
     DoublyLinkedList* ptrQueue = createList();
-    insertBack(ptrQueue, (int)startingNode);  // Armazenar o ponteiro do nó como inteiro
+    insertBack(ptrQueue, startingNode->iPayload);  // Armazenar o ponteiro do nó como inteiro
 
     while (!isEmpty(ptrQueue)) {
-        Node* ptrCurrent = (Node*)deleteFront(ptrQueue);
+        Node* ptrCurrent = deleteFront(ptrQueue);
 
         if (ptrCurrent->iPayload == iValue) {
             destroyList(ptrQueue);
@@ -27,11 +26,11 @@ Node* searchBFS(Node* startingNode, int iValue)
         }
 
         if (ptrCurrent->ptrLeft != nullptr) {
-            insertBack(ptrQueue, (int)ptrCurrent->ptrLeft);
+            insertBack(ptrQueue, ptrCurrent->ptrLeft->iPayload);
         }
 
         if (ptrCurrent->ptrRight != nullptr) {
-            insertBack(ptrQueue, (int)ptrCurrent->ptrRight);
+            insertBack(ptrQueue, (int)ptrCurrent->ptrRight->iPayload);
         }
     }
 
