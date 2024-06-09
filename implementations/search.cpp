@@ -13,5 +13,28 @@ Node* searchDFS(Node* startingNode, int iValue)
 
 Node* searchBFS(Node* startingNode, int iValue)
 {
+        if (startingNode == nullptr) return nullptr;
+
+    DoublyLinkedList* ptrQueue = createList();
+    insertBack(ptrQueue, (int)startingNode);  // Armazenar o ponteiro do nó como inteiro
+
+    while (!isEmpty(ptrQueue)) {
+        Node* ptrCurrent = (Node*)deleteFront(ptrQueue);
+
+        if (ptrCurrent->iPayload == iValue) {
+            destroyList(ptrQueue);
+            return ptrCurrent;
+        }
+
+        if (ptrCurrent->ptrLeft != nullptr) {
+            insertBack(ptrQueue, (int)ptrCurrent->ptrLeft);
+        }
+
+        if (ptrCurrent->ptrRight != nullptr) {
+            insertBack(ptrQueue, (int)ptrCurrent->ptrRight);
+        }
+    }
+
+    destroyList(ptrQueue);
     return nullptr;
 }
