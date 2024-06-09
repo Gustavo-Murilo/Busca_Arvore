@@ -1,1 +1,10 @@
 .vscode/settings.json
+headers/doubly_linked_list.h
+implementations/tree.o
+implementations/search_tree.o
+implementations/doubly_linked_list.o
+main.o
+main.exe
+headers/doubly_linked_list.h
+implementations/time_measure.o
+.gitignore
